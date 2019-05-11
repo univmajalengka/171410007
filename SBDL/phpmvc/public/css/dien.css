@@ -1,0 +1,11 @@
+th,
+td,
+a {
+    text-align: center;
+}
+
+#dien {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
