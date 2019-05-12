@@ -1,7 +1,7 @@
 ### 17.14.1.0007
 **Didin Rudini**
-:email: didinrudini12rplb@gmail.com
+:email: [didinrudini12rplb@gmail.com](mailto:didinrudini12rplb@gmail.com)
 :telephone: 082117826547
 
-**Courses**
+**Courses :**
 Sistem Basis Data Lanjut IF 4A
