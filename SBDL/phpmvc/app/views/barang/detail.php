@@ -31,7 +31,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">Tgl Masuk : <?= tgl_indo($tanggal); ?></h6>
                     <p class="card-text">Spesifikasi : <br><?= $data['brg']['spesifikasi']; ?></p>
                     <h6 class="card-subtitle mb-2 text-bold text-warning">Harga : Rp.<?= $data['brg']['hrg_jual']; ?></h6>
-                    <a href="<?= BASEURL; ?>/barang " class="btn btn-outline-success btn-sm " id="dien">kembali</a>
+                    <a href="<?= BASEURL; ?>/barang " class="btn btn-outline-success btn-sm ">kembali</a>
                 </div>
             </div>
         </div>
