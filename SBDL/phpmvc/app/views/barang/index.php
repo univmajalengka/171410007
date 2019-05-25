@@ -117,7 +117,7 @@
                     </div> -->
 
                     <div class="form-group">
-                        <label for="gambar"></label>
+                        <label for="gambar">Nama Gambar</label>
                         <input type="text" class="form-control-file" id="gambar" name="gambar">
                     </div>
 
