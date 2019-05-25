@@ -191,14 +191,14 @@ $(function () {
 
     //tabel kategori
     $('.tambahDataKategori').on('click', function () {
-        $('#judulModal').html('Tambah Data Merk');
+        $('#judulModal').html('Tambah Data Kategori');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('#kd_kategori').val("");
         $('#nama_kat').val("");
     });
 
     $('.editDataKategori').on('click', function () {
-        $('#judulModal').html('Edit Data Merk');
+        $('#judulModal').html('Edit Data Kategori');
         $('.modal-footer button[type=submit]').html('Edit Data');
         $('.modal-body form').attr('action', 'http://localhost/phpmvc/public/kategori/edit');
 
