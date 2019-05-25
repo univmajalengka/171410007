@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Bulan Mei 2019 pada 03.38
+-- Waktu pembuatan: 25 Bulan Mei 2019 pada 04.34
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -76,15 +76,15 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_brg`, `kd_kat`, `nm_brg`, `kd_merk`, `gambar`, `hrg_beli`, `hrg_jual`, `stok`, `spesifikasi`, `ket`, `tgl_masuk`) VALUES
-(2, 'KT002', 'SUPREME MARVIN GAYE TEE- BLACK', 4, 'kemasan - mie.png', 3200000, 4500000, 5, '', '', '2019-03-03'),
-(3, 'KT003', 'Casual Kemeja Cotton', 10, 'kemasan - mie.png', 272000, 320000, 15, '- Kemeja warna solid dengan warna solid \r\n- Warna abu-abu \r\n- Detail kerah \r\n- Unlined \r\n- Regular fit \r\n- Kancing depan ', '', '2019-03-05'),
-(4, 'KT004', 'Adidas Originals Sst Tracktop', 7, 'kemasan - mie.png', 1100000, 1200000, 10, '- adidas originals - Track jacket bernuansa monokrom dengan desain klasik - Warna hitam - Material katun kombinasi tidak transparan, tebal, dan tidak stretch - Kerah tinggi - Regular fit - Resleting depan - 2 kantong depan - Tinggi model 186cm, mengenakan ukuran M ', '', '2019-03-08'),
+(2, 'KT002', 'SUPREME MARVIN GAYE TEE- BLACK dn', 4, 'kemasan - mie.png', 3200000, 4500000, 5, 'gdfgdf', 'hfhgfhfghfghg', '2019-03-03'),
+(3, 'KT003', 'Casual Kemeja Cotton', 10, 'kemasan - mie.png', 272000, 320000, 15, '- Kemeja warna solid dengan warna solid - Warna abu-abu - Detail kerah - Unlined - Regular fit - Kancing depan ', 'jkskjfsjdkjfsjdfsfds', '2019-03-05'),
+(4, 'KT004', 'Adidas Originals Sst Tracktop', 7, 'kemasan - mie.png', 1100000, 1200000, 10, '- adidas originals - Track jacket bernuansa monokrom dengan desain klasik - Warna hitam - Material katun kombinasi tidak transparan, tebal, dan tidak stretch - Kerah tinggi - Regular fit - Resleting depan - 2 kantong depan - Tinggi model 186cm, mengenakan ukuran M ', 'hfhgfhfghfghg', '2019-03-08'),
 (5, 'KT005', 'Sweatshirt with Interlocking G print', 9, 'kemasan - mie.png', 20034057, 24000000, 3, 'Blue washed heavy felted cotton jersey treated for a vintage effect\r\nGreen and red Gucci and Interlocking G print\r\nTwill lining\r\nFixed hood\r\nOversize fit\r\n100% cotton\r\nMade in Italy\r\nThe model is 6\'1\" and is wearing size medium', '', '2019-03-10'),
-(6, 'KT006', 'Nike Air Max 270 Futura Shoes', 2, 'kemasan - mie.png', 2099000, 2300000, 10, '- Sneakers warna solid dengan nuansa monokrom \r\n- Warna hitam\r\n- Upper kulit sintetis, mesh dan tekstil\r\n- Insole sintetis dengan visible Max Air untuk bantalan yang responsif\r\n- Rubber outsole\r\n- Tali depan\r\n- Round toe', '', '2019-03-07'),
+(6, 'KT006', 'Nike Air Max 270 Futura Shoes', 2, 'kemasan - mie.png', 2099000, 2300000, 10, '- Sneakers warna solid dengan nuansa monokrom - Warna hitam- Upper kulit sintetis, mesh dan tekstil- Insole sintetis dengan visible Max Air untuk bantalan yang responsif- Rubber outsole- Tali depan- Round toe', 'dfdgdfgdfg', '2019-03-07'),
 (7, 'KT007', 'Chuck Taylor All Star Waterproof Leather High Top', 5, '', 1200000, 1500000, 5, 'Nubuck leather upper is tough, but smooth.\r\nReflective elements add safety and style.\r\nMesh inner sleeve is light and breathable.\r\nNike Lunarlon insole for cushioned comfort.\r\nDebossed All Star ankle patch', 'gdgdgdgdgdf', '2019-03-05'),
 (8, 'KT008', 'Wakai Core Stamp', 3, '', 490000, 520000, 20, '- Slip on warna solid dengan desain minimalis\r\n- Warna hitam\r\n- Upper kanvas\r\n- Insole tekstil\r\n- Rubber outsole\r\n- Detail gusset elastis\r\n- Round toe', '', '2019-03-03'),
-(9, 'KT009', 'Aru Vintage Black', 11, '', 350000, 380000, 15, '- CH Leather Upper\r\n- Faux Leather Insole\r\n- TPR Outsole', 'sfsfsfsdfs', '2019-03-07'),
-(37, 'KT004', 'klaksdkadkls', 4, 'kemasan - mie.png', 876867, 68686, 43, 'klakldkaldklkada', 'dadksdlkaldklkada', '2019-05-11');
+(9, 'KT009', 'Aru Vintage Black', 11, 'adad', 350000, 380000, 15, '- CH Leather Upper- Faux Leather Insole- TPR Outsole', 'sfsfsfsdfs', '2019-03-07'),
+(37, 'KT004', 'klaksdkadkls nd', 4, 'kemasan - mie.png', 876867, 68686, 43, 'klakldkaldklkada', 'dadksdlkaldklkada', '2019-05-11');
 
 -- --------------------------------------------------------
 
@@ -149,7 +149,6 @@ INSERT INTO `kategori` (`kd_kat`, `nama_kat`) VALUES
 
 CREATE TABLE `konsumen` (
   `id_konsumen` varchar(13) NOT NULL,
-  `id_prov` int(11) NOT NULL,
   `id_kota` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `alamat` text NOT NULL,
@@ -166,17 +165,19 @@ CREATE TABLE `konsumen` (
 -- Dumping data untuk tabel `konsumen`
 --
 
-INSERT INTO `konsumen` (`id_konsumen`, `id_prov`, `id_kota`, `nama`, `alamat`, `kode_pos`, `phone`, `email`, `nama_bank`, `cabang`, `atas_nama`, `rek`) VALUES
-('KN0001', 8, 1, 'didin', 'desa ranjikulon', '45453', '082117826547', 'didinrudini12rplb@gmail.com', 'BJB', 'majalengka', 'didin rudini', '3142412312'),
-('KN0002', 8, 1, 'roni', 'desa karang asem', '45473', '0831983723871', '', 'BJB', 'majalangka', 'roni', '83918329'),
-('KN0003', 8, 1, 'dadan', 'desa bongas', '45455', '28493472874', '', 'BJB', 'majalengka', 'dadan', '9349184922'),
-('KN0004', 8, 1, 'nana', 'desa beusi', '45456', '849824983942', '', 'BJB', 'majalengka', 'nana', '484928349'),
-('KN0005', 8, 1, 'sigit', 'desa kasokandel', '45453', '9390293829', '', 'BJB', 'majalengka', 'sigit', '398293283'),
-('KN0006', 8, 1, 'iqbal', 'desa sindang haji', '45475', '84928493234', '', 'BJB', 'Majalengka', 'iqbal', '427487382'),
-('KN0007', 8, 1, 'crisda', 'ligung', '45456', '978878', '', 'BJB', 'Majalengka', 'crisda', '9492349432'),
-('KN0008', 8, 1, 'deden', 'pangkalanpari', '45458', '8942893482934', '', 'BJB', 'Majalengka', 'deden', '493894394'),
-('KN0009', 8, 1, 'harist', 'kertajati', '45457', '839849823', '', 'BJB', 'Majalengka', 'haris', '84982493'),
-('KN0010', 8, 1, 'dinda', 'kareo', '45468', '898325984', '', 'BJB', 'Majalengka', 'dinda', '48928493');
+INSERT INTO `konsumen` (`id_konsumen`, `id_kota`, `nama`, `alamat`, `kode_pos`, `phone`, `email`, `nama_bank`, `cabang`, `atas_nama`, `rek`) VALUES
+('idaijds', 10, 'kajdajskd', 'ajckjcaod', '49023', '902482934', 'didinrudini12rplb@gmail.com', 'sofosdkfd', 'ajkjkf', 'jfkjsjdf', '93023'),
+('KD829483', 5, 'jdksjkd', 'kdjkdjaj', '24903', '950453049503', 'didinrudini12rplb@gmail.com', 'djkajdkas', 'jdkajdksakdja', 'alkldkalksdka', '920493'),
+('KN0001', 1, 'didin', 'desa ranjikulon', '45453', '082117826547', 'didinrudini12rplb@gmail.com', 'BJB', 'majalengka', 'didin rudini', '3142412312'),
+('KN0002', 1, 'roni', 'desa karang asem', '45473', '0831983723871', '', 'BJB', 'majalangka', 'roni', '83918329'),
+('KN0003', 1, 'dadan', 'desa bongas', '45455', '28493472874', '', 'BJB', 'majalengka', 'dadan', '9349184922'),
+('KN0004', 1, 'nana', 'desa beusi', '45456', '849824983942', '', 'BJB', 'majalengka', 'nana', '484928349'),
+('KN0005', 1, 'sigit', 'desa kasokandel', '45453', '9390293829', '', 'BJB', 'majalengka', 'sigit', '398293283'),
+('KN0006', 1, 'iqbal', 'desa sindang haji', '45475', '84928493234', '', 'BJB', 'Majalengka', 'iqbal', '427487382'),
+('KN0007', 1, 'crisda', 'ligung', '45456', '978878', '', 'BJB', 'Majalengka', 'crisda', '9492349432'),
+('KN0008', 1, 'deden', 'pangkalanpari', '45458', '8942893482934', '', 'BJB', 'Majalengka', 'deden', '493894394'),
+('KN0009', 1, 'harist', 'kertajati', '45457', '839849823', '', 'BJB', 'Majalengka', 'haris', '84982493'),
+('KN0010', 1, 'dinda', 'kareo', '45468', '898325984', '', 'BJB', 'Majalengka', 'dinda', '48928493');
 
 -- --------------------------------------------------------
 
@@ -197,7 +198,7 @@ CREATE TABLE `kota` (
 
 INSERT INTO `kota` (`id_kota`, `id_prov`, `nama_kota`, `biaya`) VALUES
 (1, 8, 'Majalengka', 8000),
-(2, 8, 'Cirebon', 8000),
+(2, 8, 'Cirebon', 8500),
 (3, 8, 'Indramayu', 8000),
 (4, 8, 'Kuningan', 8000),
 (5, 9, 'Jakarta Selatan', 12000),
@@ -205,7 +206,8 @@ INSERT INTO `kota` (`id_kota`, `id_prov`, `nama_kota`, `biaya`) VALUES
 (7, 10, 'Pekalongan', 18000),
 (8, 4, 'Pekanbaru', 30000),
 (9, 7, 'Tangerang', 12000),
-(10, 6, 'Bengkulu', 30000);
+(10, 6, 'Bengkulu', 30000),
+(16, 6, 'jdkajds', 100000);
 
 -- --------------------------------------------------------
 
@@ -234,7 +236,10 @@ INSERT INTO `merk` (`kd_merk`, `nama_merk`, `mgambar`) VALUES
 (8, 'Cressida', ''),
 (9, 'Gucci', ''),
 (10, 'Cardinal', ''),
-(11, 'Brodo', '');
+(11, 'Brodo', ''),
+(12, 'adksdl', 'Concrete_Wall_3_by_mdpratt.jpg'),
+(13, 'klakda', 'dgdgdf'),
+(14, 'ljkljiji', 'kemasan - mie.png');
 
 -- --------------------------------------------------------
 
@@ -294,7 +299,9 @@ INSERT INTO `provinsi` (`id_prov`, `nama_prov`) VALUES
 (7, 'Banten'),
 (8, 'Jawa Barat'),
 (9, 'DKI Jakarta'),
-(10, 'Jawa Tengah');
+(10, 'Jawa Tengah'),
+(11, 'papua'),
+(14, 'dienprov kajdjadsj');
 
 -- --------------------------------------------------------
 
@@ -357,7 +364,6 @@ ALTER TABLE `kategori`
 --
 ALTER TABLE `konsumen`
   ADD PRIMARY KEY (`id_konsumen`),
-  ADD KEY `id_prov` (`id_prov`),
   ADD KEY `id_kota` (`id_kota`);
 
 --
@@ -412,19 +418,19 @@ ALTER TABLE `detail_jual`
 -- AUTO_INCREMENT untuk tabel `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `merk`
 --
 ALTER TABLE `merk`
-  MODIFY `kd_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `kd_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
-  MODIFY `id_prov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_prov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
@@ -453,7 +459,6 @@ ALTER TABLE `detail_jual`
 -- Ketidakleluasaan untuk tabel `konsumen`
 --
 ALTER TABLE `konsumen`
-  ADD CONSTRAINT `konsumen_ibfk_1` FOREIGN KEY (`id_prov`) REFERENCES `provinsi` (`id_prov`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `konsumen_ibfk_2` FOREIGN KEY (`id_kota`) REFERENCES `kota` (`id_kota`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

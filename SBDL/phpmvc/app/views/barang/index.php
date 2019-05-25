@@ -8,7 +8,7 @@
 
     <div class="row mt-3">
         <div class="col-lg-12">
-            <button type="button" class="btn btn-primary mb-4 tambahData" data-toggle="modal" data-target="#formModal">
+            <button type="button" class="btn btn-primary mb-4 tambahDataBarang" data-toggle="modal" data-target="#formModal">
                 Tambah data barang
             </button>
             <h3>Daftar Barang</h3>
@@ -56,7 +56,7 @@
                             <td><?= tanggal_indo($tanggal); ?></td>
                             <td>
                                 <a href="<?= BASEURL; ?>/barang/detail/<?= $brg['kd_brg'] ?>" class="btn btn-outline-primary btn-sm">Detail</a>
-                                <a href="<?= BASEURL; ?>/barang/edit/<?= $brg['kd_brg'] ?>" class="btn btn-outline-success btn-sm editData" data-toggle="modal" data-target="#formModal" data-kd_brg="<?= $brg['kd_brg'] ?>">Edit</a>
+                                <a href="<?= BASEURL; ?>/barang/edit/<?= $brg['kd_brg'] ?>" class="btn btn-outline-success btn-sm editDataBarang" data-toggle="modal" data-target="#formModal" data-kd_brg="<?= $brg['kd_brg'] ?>">Edit</a>
                                 <a href="<?= BASEURL; ?>/barang/hapus/<?= $brg['kd_brg'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Yakin akan dihapus ?');">Hapus</a>
                             </td>
                         </tr>
@@ -83,7 +83,9 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/barang/tambah" method="post">
+
                     <input type="hidden" name="kd_brg" id="kd_brg">
+
                     <div class="form-group">
                         <label for="kategori">Kategori Barang</label>
                         <select class="form-control" id="kategori" name="kategori">
