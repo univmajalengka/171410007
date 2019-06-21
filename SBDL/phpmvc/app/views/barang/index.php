@@ -17,6 +17,7 @@
                     <tr>
                         <th scope="col">No.</th>
                         <th scope="col">Nama Barang</th>
+                        <th scope="col">Kategori Barang</th>
                         <th scope="col">Stok</th>
                         <th scope="col">Tanggal Masuk</th>
                         <th scope="col">Aksi</th>
@@ -52,6 +53,7 @@
                         <tr>
                             <th scope="row"><?= $i + 1 ?>.</th>
                             <td><?= $brg['nm_brg']; ?></td>
+                            <td><?= $brg['nama_kat']; ?></td>
                             <td><?= $brg['stok']; ?> Items</td>
                             <td><?= tanggal_indo($tanggal); ?></td>
                             <td>

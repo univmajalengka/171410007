@@ -12,13 +12,13 @@ class Konsumen_model
 
     public function getAllKonsumen()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM view_konsumen');
         return $this->db->resultSet();
     }
 
     public function getKonsumenById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id_konsumen=:id');
+        $this->db->query('SELECT * FROM view_konsumen WHERE id_konsumen=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }

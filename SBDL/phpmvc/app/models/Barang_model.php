@@ -12,13 +12,13 @@ class Barang_model
 
     public function getAllBarang()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM view_barang');
         return $this->db->resultSet();
     }
 
     public function getBarangById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE kd_brg=:id');
+        $this->db->query('SELECT * FROM view_barang WHERE kd_brg=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
