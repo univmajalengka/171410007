@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Bulan Mei 2019 pada 04.34
+-- Waktu pembuatan: 21 Jun 2019 pada 10.26
 -- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.3.1
+-- Versi PHP: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -166,7 +166,8 @@ CREATE TABLE `konsumen` (
 --
 
 INSERT INTO `konsumen` (`id_konsumen`, `id_kota`, `nama`, `alamat`, `kode_pos`, `phone`, `email`, `nama_bank`, `cabang`, `atas_nama`, `rek`) VALUES
-('idaijds', 10, 'kajdajskd', 'ajckjcaod', '49023', '902482934', 'didinrudini12rplb@gmail.com', 'sofosdkfd', 'ajkjkf', 'jfkjsjdf', '93023'),
+('idaijds', 10, 'kajdajskd', 'ajckjcaod', '49023', '88888', 'didinrudini12rplb@gmail.com', 'sofosdkfd', 'ajkjkf', 'jfkjsjdf', '93023'),
+('kajdkads', 10, 'akdjkdsa', 'jkjad', '49829', '987868', 'didinrudini12rplb@gmail.com', 'ajdkajs', 'jdkajd', 'ksffs', '94092034'),
 ('KD829483', 5, 'jdksjkd', 'kdjkdjaj', '24903', '950453049503', 'didinrudini12rplb@gmail.com', 'djkajdkas', 'jdkajdksakdja', 'alkldkalksdka', '920493'),
 ('KN0001', 1, 'didin', 'desa ranjikulon', '45453', '082117826547', 'didinrudini12rplb@gmail.com', 'BJB', 'majalengka', 'didin rudini', '3142412312'),
 ('KN0002', 1, 'roni', 'desa karang asem', '45473', '0831983723871', '', 'BJB', 'majalangka', 'roni', '83918329'),
@@ -207,7 +208,8 @@ INSERT INTO `kota` (`id_kota`, `id_prov`, `nama_kota`, `biaya`) VALUES
 (8, 4, 'Pekanbaru', 30000),
 (9, 7, 'Tangerang', 12000),
 (10, 6, 'Bengkulu', 30000),
-(16, 6, 'jdkajds', 100000);
+(16, 6, 'jdkajds', 100000),
+(17, 8, 'akjdkas', 8000);
 
 -- --------------------------------------------------------
 
@@ -237,9 +239,7 @@ INSERT INTO `merk` (`kd_merk`, `nama_merk`, `mgambar`) VALUES
 (9, 'Gucci', ''),
 (10, 'Cardinal', ''),
 (11, 'Brodo', ''),
-(12, 'adksdl', 'Concrete_Wall_3_by_mdpratt.jpg'),
-(13, 'klakda', 'dgdgdf'),
-(14, 'ljkljiji', 'kemasan - mie.png');
+(12, 'adksdl', 'Concrete_Wall_3_by_mdpratt.jpg');
 
 -- --------------------------------------------------------
 
@@ -301,7 +301,7 @@ INSERT INTO `provinsi` (`id_prov`, `nama_prov`) VALUES
 (9, 'DKI Jakarta'),
 (10, 'Jawa Tengah'),
 (11, 'papua'),
-(14, 'dienprov kajdjadsj');
+(14, 'dkajdks');
 
 -- --------------------------------------------------------
 
@@ -325,6 +325,64 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 (18, 'aulia', '$2y$10$k5k.c/m3sKxgdwVPp2R.lOQ2/SUrAyU4uU8XOWt0/v2qoXvMK7mU.'),
 (19, 'ghj', '$2y$10$wsoc.Je.m2tB/vNu8KjqGu2ifm6aeriaZLHS1Z1k3NEyOUVG0ihLG'),
 (20, 'qwerty', '$2y$10$Qir6KtjXp/3cKi3vOmBs/.MGZZBgieAtc9lcRbwff/DtdMoF14fxq');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `view_barang`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `view_barang` (
+`kd_brg` int(11)
+,`nama_kat` varchar(10)
+,`nm_brg` varchar(50)
+,`nama_merk` varchar(20)
+,`gambar` text
+,`hrg_beli` double
+,`hrg_jual` double
+,`stok` int(5)
+,`spesifikasi` text
+,`ket` text
+,`tgl_masuk` date
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `view_konsumen`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `view_konsumen` (
+`id_konsumen` varchar(13)
+,`nama` varchar(50)
+,`alamat` text
+,`nama_kota` varchar(50)
+,`kode_pos` varchar(5)
+,`phone` varchar(20)
+,`email` text
+,`nama_bank` varchar(40)
+,`cabang` varchar(40)
+,`atas_nama` varchar(50)
+,`rek` varchar(20)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `view_barang`
+--
+DROP TABLE IF EXISTS `view_barang`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_barang`  AS  select `a`.`kd_brg` AS `kd_brg`,`b`.`nama_kat` AS `nama_kat`,`a`.`nm_brg` AS `nm_brg`,`c`.`nama_merk` AS `nama_merk`,`a`.`gambar` AS `gambar`,`a`.`hrg_beli` AS `hrg_beli`,`a`.`hrg_jual` AS `hrg_jual`,`a`.`stok` AS `stok`,`a`.`spesifikasi` AS `spesifikasi`,`a`.`ket` AS `ket`,`a`.`tgl_masuk` AS `tgl_masuk` from ((`barang` `a` join `kategori` `b` on((`b`.`kd_kat` = `a`.`kd_kat`))) join `merk` `c` on((`c`.`kd_merk` = `a`.`kd_merk`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `view_konsumen`
+--
+DROP TABLE IF EXISTS `view_konsumen`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_konsumen`  AS  select `a`.`id_konsumen` AS `id_konsumen`,`a`.`nama` AS `nama`,`a`.`alamat` AS `alamat`,`b`.`nama_kota` AS `nama_kota`,`a`.`kode_pos` AS `kode_pos`,`a`.`phone` AS `phone`,`a`.`email` AS `email`,`a`.`nama_bank` AS `nama_bank`,`a`.`cabang` AS `cabang`,`a`.`atas_nama` AS `atas_nama`,`a`.`rek` AS `rek` from (`konsumen` `a` join `kota` `b` on((`b`.`id_kota` = `a`.`id_kota`))) ;
 
 --
 -- Indexes for dumped tables
@@ -418,13 +476,13 @@ ALTER TABLE `detail_jual`
 -- AUTO_INCREMENT untuk tabel `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `merk`
 --
 ALTER TABLE `merk`
-  MODIFY `kd_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `kd_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`
